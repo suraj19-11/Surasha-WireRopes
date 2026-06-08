@@ -1,0 +1,816 @@
+Design a complete modern B2B manufacturing website for "Surasha Wireropes" — a wire 
+rope manufacturer and wholesaler based in Thane, Maharashtra, India (est. 2020). 
+Take strong design inspiration from fortran.in: editorial typographic layouts, full-bleed 
+dark hero sections, clean white product pages, numbered section markers, generous 
+whitespace, and a premium industrial feel. NOT a marketplace/IndiaMART-style UI.
+
+═══════════════════════════════════════════
+BRAND & DESIGN SYSTEM
+═══════════════════════════════════════════
+
+Color Palette:
+  Primary Dark:     #0D1B2A  (hero, navbar, footer — near black navy)
+  Secondary Dark:   #1A2E45  (section backgrounds, alternate rows)
+  Accent Orange:    #E87722  (all CTAs, highlights, hover states, price text)
+  Accent Light:     #F5A623  (hover variant of orange)
+  White:            #FFFFFF  (cards, forms, body)
+  Off-White:        #F8F7F4  (alternate sections, like fortran's cream)
+  Text Primary:     #1A1A1A
+  Text Secondary:   #555555
+  Border:           #E2E2E2
+  Steel Gray:       #8A9BAD  (used for labels, secondary text on dark bg)
+
+Typography:
+  Headings:         "Inter" or "Poppins", weight 700, tracked slightly wide
+  Subheadings:      weight 500
+  Body:             "Inter", weight 400, line-height 1.7
+  Accent Labels:    ALL CAPS, letter-spacing 0.15em, 12px, steel gray color
+  Prices:           weight 700, orange, 24px+
+
+Design Language (from fortran.in reference):
+  - Large full-bleed hero with dark overlay and industrial background photo
+  - Numbered section markers ("01", "02", "03") in orange before section titles
+  - Clean white product cards with minimal borders, hover lift effect
+  - Section intro: small ALL CAPS label + large bold headline + body paragraph
+  - "Get Quote" sticky CTA button in navbar (orange, rounded pill)
+  - Alternating white / off-white (#F8F7F4) section backgrounds
+  - Footer: dark navy, multi-column, clean link lists
+  - Breadcrumb navigation on all inner pages
+  - Thin orange underline accent on active nav items
+  - Product detail pages: 2-column, image gallery left + specs table right
+
+═══════════════════════════════════════════
+GLOBAL COMPONENTS
+═══════════════════════════════════════════
+
+TOP ANNOUNCEMENT BAR (above navbar, dark bg #0D1B2A, orange text):
+  "📞 08045910872   |   77% Response Rate   |   ✔ TrustSEAL Verified   
+   |   GST: 27DHJPS7234B1Z7   |   Thane, Maharashtra"
+
+STICKY NAVBAR (white bg, box-shadow on scroll):
+  Left:   Logo — wire rope coil icon + "Surasha" (bold, dark) + "Wireropes" 
+          (lighter weight, orange)
+  Center nav links (with dropdown):
+    Home
+    Products ▾ (mega-dropdown — see below)
+    About Us
+    Contact Us
+  Right:  Phone icon + "08045910872"  |  "Get Quote" (orange pill button)
+
+PRODUCTS MEGA-DROPDOWN (on hover):
+  Left column — "Steel Wire Rope":
+    • 2mm Stainless Steel Wire Rope
+    • 3mm Stainless Steel Wire Rope
+    • 4mm Stainless Steel Rope Wire
+    • 5mm Stainless Steel Wire Rope
+    • 6mm Stainless Steel Wire Rope
+    • 8mm Galvanized Steel Wire Rope
+    • 10mm Galvanized Steel Wire Rope
+    • 1mm Galvanized Steel Wire Rope
+    • Mild Steel Wire Rope
+    • Nylon Coated SS Wire Rope
+    • 3mm Galvanized Wire Rope
+  Middle column — "Wire Rope / SS Wire Rope":
+    • Stainless Steel Wire Rope (SS 304L, 2mm)
+    • SS 316 Wire Rope for High Mast
+    • SS Seal 304 Wire Rope (0.8mm)
+    • Stainless Steel 304 Wire Rope (8mm)
+    • Wireropes for High Mast SS 316/304
+    • 316 Stainless Steel Wire Rope
+    • SS Wire Rope 6mm 304/316
+    • Wireropes for Lifeline 8mm SS 304/316
+    • Stainless Steel Wire Rope (7x19, 1-10mm)
+  Right column — "Coated & Specialty":
+    • PVC Black and Yellow Coated Wire Rope
+    • PVC Coated Gym Wire Rope
+    • PVC and Nylon Coated Wire Ropes
+    • PVC Coated Steel Anti-Rust Wire Rope
+    • Black PVC Coated Galvanized Wire Rope
+    • 2mm Galvanized PVC Coated Wire Rope
+    • Galvanized PVC Wireropes
+    • 8mm SS Wire Rope (Strand)
+    • SS Strand Ropes (5mm)
+    • Stainless Steel Strand Rope
+    • 8mm Ungalvanized Steel Wire Rope
+    • Highmast Poll Wireropes
+    • SS316 Nylon Coating Wire Rope (Invisible Grill)
+    • 4mm SS Strand Rope
+
+═══════════════════════════════════════════
+PAGE 1: HOME PAGE
+═══════════════════════════════════════════
+
+── HERO SECTION ──
+Full-bleed, 100vh, dark industrial background image (wire ropes on spool/factory)
+Dark overlay (#0D1B2A at 75% opacity)
+Center-aligned content:
+  Small label:   "MANUFACTURER & WHOLESALER — THANE, INDIA"  (ALL CAPS, orange, 
+                  letter-spaced)
+  H1:            "Precision Wire Ropes for Every Industrial Need"
+                 (white, 56px, weight 700, max-width 700px)
+  Body:          "Stainless Steel · Galvanized · PVC Coated · Strand Wire Ropes. 
+                 Direct manufacturer pricing. Pan India delivery."
+                 (steel gray, 18px)
+  CTA row:       [Explore Products] (orange solid pill, large)  
+                 [Get Best Quote] (white outlined pill, large)
+Trust strip below CTAs (4 items, icon + label, white):
+  ✔ TrustSEAL Verified   |   GST Registered   |   Pan India Delivery   
+  |   Est. 2020, Thane
+
+── ABOUT STRIP ──
+Background: #F8F7F4 (off-white/cream, like fortran.in)
+Label (ALL CAPS, orange): "ABOUT US"
+Two-column layout:
+  Left (60%):
+    H2: "The Surasha Wireropes Edge"
+    Body: "Established in 2020 as a Proprietorship firm, Surasha Wireropes is a 
+    leading Manufacturer and Wholesaler of Stainless Steel Wire Ropes, Galvanized 
+    Wire Ropes, PVC Coated Wire Ropes, and Strand Ropes — proudly made in Thane, 
+    Maharashtra. We serve construction, marine, lifting, and industrial sectors 
+    across all of India."
+    Company facts (2×2 grid of stat blocks):
+      Annual Turnover: ₹40L – 1.5Cr  |  Legal Status: Proprietorship
+      GST Registered: 2020            |  IEC Code: DHJPS7234B
+    [Read More About Us] link (orange, underline)
+  Right (40%):
+    Stacked two industrial photos of wire ropes (placeholder rectangles with 
+    steel-gray bg if no images)
+
+── PRODUCT CATEGORIES SECTION ──
+Background: white
+Label (ALL CAPS, orange): "OUR PRODUCTS"
+H2: "When It Comes to Wire Ropes, We Take the Lead"
+Body intro: "From lightweight 1mm galvanized wire to heavy-duty 16mm stainless 
+steel strand rope — we manufacture and supply across all diameters, grades, 
+and coatings."
+[Get a Quote] link (orange)
+
+4 large numbered product category cards in a 2×2 grid (each card full image bg 
+with dark overlay, white text, orange number):
+
+  Card 01 — "Stainless Steel Wire Ropes"
+  Sub: "SS 304 / SS 304L / SS 316 / SS 316L · 1mm to 16mm"
+  Body: "Rust-proof, high-tensile stainless wire ropes for marine, 
+  construction, and high mast applications. Available in 7×7 and 7×19 
+  constructions."
+  [View Range →]
+
+  Card 02 — "Galvanized Wire Ropes"
+  Sub: "Zinc-coated · 1mm to 10mm · High corrosion resistance"
+  Body: "Hot-dip galvanized wire ropes offering excellent protection 
+  against rust and weathering. Ideal for outdoor rigging, lifting, 
+  and construction."
+  [View Range →]
+
+  Card 03 — "PVC Coated Wire Ropes"
+  Sub: "PVC / Nylon coated · 2mm to 16mm · Multiple colors"
+  Body: "Steel wire ropes with PVC or nylon outer coating for 
+  added protection, flexibility, and aesthetic finish. Used in gym 
+  equipment, balcony railings, and safety fencing."
+  [View Range →]
+
+  Card 04 — "Strand & Specialty Ropes"
+  Sub: "Strand rope · Ungalvanized · Highmast · Invisible Grill"
+  Body: "Specialized wire ropes for strand construction, high mast 
+  poles, lifelines, and invisible grill applications in SS 304 and 316 
+  grades."
+  [View Range →]
+
+── FEATURED PRODUCTS ROW ──
+Background: #F8F7F4
+Label: "FEATURED PRODUCTS"
+H2: "Explore Our Most Popular Wire Ropes"
+Horizontal scroll row of product cards (10 cards, each 260px wide):
+
+Each card layout:
+  - Square image placeholder (light gray, rope icon)
+  - Product name (bold, 14px)
+  - Material grade badge (pill: "SS 304" orange bg, or "Galvanized" navy bg)
+  - Diameter badge (pill: e.g. "6mm")
+  - Price: "₹70 / Meter" (orange, bold, 18px)
+  - MOQ: "Min. 1000 m" (gray, 12px)
+  - [Get Best Quote] button (orange, full width, small)
+
+Product cards (all 10):
+
+  1. SS Wire Rope 6mm 304/316
+     Grade: SS 304 | Diameter: 6mm | Construction: 7×19
+     Length: 1000m | Core: Steel Core | Price: ₹70/m
+     Application: Lifting & Hoisting
+
+  2. Stainless Steel Wire Rope (7×19)
+     Grade: SS 304 | Diameter: 1–10mm | Pattern: 7×19
+     Price: ₹70/m | MOQ: 500m | Application: Construction
+
+  3. 2mm Stainless Steel Wire Rope
+     Grade: SS 304 | Diameter: 2mm | Core: Fibre / Steel Core
+     Hardness: 55 HRC | Rust Proof: Yes | Price: ₹20/m | MOQ: 1000m
+
+  4. PVC Black & Yellow Coated Wire Rope
+     Construction: 7×19 | Diameter: 3–8mm | Core: WSC (Strand)
+     Coating: PVC | Length: 1000m | Price: ₹20/m | MOQ: 1000m
+     Application: Gym, Winch, Marine, Safety Fence, Balcony Railing
+
+  5. Wireropes for Lifeline 8mm SS 304/316
+     Grade: SS 304 | Diameter: 8mm | Tensile: 2160 N/mm²
+     Length: 500m | Core: Steel Core | Price: ₹95/m | MOQ: 500m
+     Certificate: Indian Test Certificate Available
+
+  6. Stainless Steel 304 Wire Rope (8mm)
+     Grade: SS 304L | Diameter: 8mm | Tensile: 2160 N/mm²
+     Length: 1000m | Core: Steel Core | Packaging: Reel
+     Price: ₹58/m | MOQ: 500m
+
+  7. Black PVC Coated Galvanized Wire Rope
+     Grade: SS 316 | Construction: 7×19 | Diameter: 2–16mm
+     Core: Fibre | Coating: Black PVC | Length: 1000m
+     Hardness: 45 HRC | Price: ₹35/m | MOQ: 1000m
+
+  8. SS 316 Wire Rope for High Mast
+     Grade: SS 316L | Diameter: 8mm | Core: Strand
+     Rust Proof: Yes | Hardness: 55 HRC | Price: ₹55/m | MOQ: 100m
+
+  9. 8mm Galvanized Steel Wire Rope
+     Diameter: 8mm | Material: Steel | Core: Steel Core
+     Finish: Galvanized | Length: 100m | Packaging: Coil
+     Price: ₹47/m | MOQ: 1000m
+
+  10. Galvanized PVC Wireropes
+      Construction: 7×19 | Diameter: 1–10mm | Core: IWRC (Steel)
+      Finish: Galvanized | Tensile: 1960 N/mm² | Lay: Right Hand Regular
+      Surface: Polished | Length: 1000m/reel | Price: ₹10/m
+      Brand: Surasha Wireropes | Made in India
+
+── WHY CHOOSE US ──
+Background: #0D1B2A (dark navy, like fortran.in's dark sections)
+Label (ALL CAPS, orange): "THE SURASHA ADVANTAGE"
+H2 (white): "What Sets Us Apart"
+
+8 items in a 4×2 grid (numbered 01–08, white cards with dark text OR 
+dark bg with white text + orange number, like fortran.in's grid):
+
+  01  Direct Manufacturer Pricing
+      Skip the middleman. Direct factory pricing on all orders above 
+      the minimum quantity.
+
+  02  Wide Diameter Range
+      From ultra-fine 0.8mm seal rope to heavy-duty 16mm strand rope — 
+      we cover every industrial need.
+
+  03  Multiple Grade Options
+      SS 304, SS 304L, SS 316, SS 316L, Galvanized, Mild Steel — choose 
+      the grade that fits your application.
+
+  04  Pan India Delivery
+      We ship all products across India. Bulk reel orders dispatched from 
+      our Thane warehouse.
+
+  05  TrustSEAL Verified
+      Verified manufacturer on IndiaMART with GST registration since 2020 
+      and import-export code.
+
+  06  Test Certificates Available
+      Lifeline wire ropes supplied with Indian test certificates as per 
+      industry safety standards.
+
+  07  Custom Coating & Lengths
+      PVC, nylon, galvanized, and uncoated finishes. Reel lengths from 
+      100m to 5000m available to order.
+
+  08  Fast Response
+      77% response rate. Call us or send an enquiry — we respond the same 
+      business day.
+
+── INDUSTRIES WE SERVE ──
+Background: #F8F7F4
+Label: "OUR SERVICE"
+H2: "Industries That Rely on Surasha Wireropes"
+
+Horizontal icon+label grid (4 cols × 2 rows = 8 industries):
+  01 Construction        05 Marine & Offshore
+  02 Lifting & Rigging   06 Gym & Fitness Equipment
+  03 High Mast Lighting  07 Infrastructure
+  04 Safety & Lifeline   08 General Engineering
+
+── RATINGS & REVIEWS ──
+Background: white
+Label: "CLIENT FEEDBACK"
+H2: "Trusted by Buyers Across India"
+
+Left: Rating summary card
+  4.3 / 5 stars (large, orange stars)
+  "Reviewed by 4 Users"
+  Star breakdown bars:
+    5★ ██████████ 2 reviews
+    4★ █████      1 review
+    3★ █████      1 review
+    2★             0
+    1★             0
+  Satisfaction metrics: User Satisfaction · Quality · Delivery — all 100%
+
+Right: 3 review cards
+  Card 1: "S" avatar (orange) — Siyyon Industries, Pune, Maharashtra
+  ★★★★★  |  28 July 2025  |  Product: Sealing Wire
+  "Great product quality and prompt delivery."
+
+  Card 2: "R" avatar (navy) — Rohith, Bellary, Karnataka
+  ★★★★★  |  11 August 2024  |  Product: Stainless Steel Wire Rope
+  "Excellent material grade and pricing."
+
+  Card 3: "J" avatar (teal) — Jambu Bhambure, Thane, Maharashtra
+  ★★★★★  |  11 November 2022  |  Product: Galvanized Wire Rope
+  "Reliable manufacturer, good communication."
+
+── QUICK ENQUIRY SECTION ──
+Background: #0D1B2A (dark)
+Two-column layout:
+  Left:
+    Label (orange, ALL CAPS): "GET INSTANT QUOTE"
+    H2 (white): "Tell Us What You're Looking For"
+    Body (steel gray): "We respond within 1 business day. Minimum 
+    order quantity is 1000 meters for most products."
+    Contact block:
+      📞 08045910872
+      ✉ enquiry@surashawireropes.com
+      📍 Bhayander East, Thane – 401105
+  Right: white form card with shadow
+    Fields:
+      Salutation (Mr / Ms / Mrs / Dr) + Full Name
+      Phone Number
+      Email Address
+      Product Interested In (dropdown):
+        SS Wire Rope | Galvanized Wire Rope | PVC Coated Wire Rope |
+        Strand Rope | Ungalvanized Wire Rope | Other
+      Diameter Needed (dropdown):
+        1mm | 2mm | 3mm | 4mm | 5mm | 6mm | 8mm | 10mm | 12mm | 16mm
+      Quantity Required (in meters)
+      Additional Message (textarea)
+    [Send Enquiry →] (orange solid button, full width)
+
+── FOOTER ──
+Background: #0D1B2A
+Top footer (4 columns):
+
+  Col 1 — Brand:
+    Logo + tagline: "Trusted wire rope manufacturer since 2020"
+    Address: Ground Floor, A 11, Mastan Industrial Estate, 
+             Navghar Phatk Road, Bhayander East,
+             Thane – 401105, Maharashtra, India
+    Phone: 08045910872
+    GST No.: 27DHJPS7234B1Z7
+    IEC: DHJPS7234B
+
+  Col 2 — Products:
+    Steel Wire Rope
+    SS Wire Rope (304/316)
+    PVC Coated Wire Rope
+    Galvanized Wire Rope
+    Strand Rope
+    Strand Wire Rope
+    Ungalvanized Wire Rope
+    Stainless Steel Wire Rope
+    View All Products →
+
+  Col 3 — Quick Links:
+    About Us
+    Our Products
+    Testimonials
+    Contact Us
+    Get Best Quote
+    Sitemap
+
+  Col 4 — Connect:
+    "Send Email" button (outlined, white)
+    "Call Now" button (orange solid)
+    Social icons: Facebook · Twitter · LinkedIn
+    "Share Us" label
+
+Bottom bar (border-top, dark gray text):
+  "© Surasha Wireropes. All Rights Reserved."   |   
+  "Developed by [Your Agency]"
+
+═══════════════════════════════════════════
+PAGE 2: PRODUCTS LISTING PAGE
+═══════════════════════════════════════════
+
+Hero banner (dark, 300px height):
+  Breadcrumb: Home > Our Products
+  H1: "Our Products"
+  Sub: "Complete range of stainless steel, galvanized, PVC coated 
+  and strand wire ropes — 1mm to 16mm"
+
+Two-column layout (sidebar + grid):
+
+LEFT SIDEBAR (260px, sticky):
+  "Filter Products" heading (bold)
+  
+  Category filter (checkboxes):
+    ☐ Steel Wire Rope
+    ☐ Wire Rope / SS Grade
+    ☐ PVC Coated Wire Rope
+    ☐ SS Wire Rope
+    ☐ Strand Rope
+    ☐ Strand Wire Rope
+    ☐ Ungalvanized Wire Rope
+    ☐ Stainless Steel Wire Rope
+    ☐ Steel Core Wire Ropes
+
+  Material Grade (checkboxes):
+    ☐ SS 304
+    ☐ SS 304L
+    ☐ SS 316
+    ☐ SS 316L
+    ☐ Galvanized Steel
+    ☐ Mild Steel
+
+  Diameter (range slider): 1mm — 16mm
+
+  Price Range (slider): ₹5 — ₹200 per meter
+
+  Coating (checkboxes):
+    ☐ Uncoated
+    ☐ PVC Coated
+    ☐ Nylon Coated
+    ☐ Galvanized
+    ☐ Black PVC
+
+  [Apply Filters] button (orange)
+  [Clear All] text link
+
+RIGHT PRODUCT GRID (3 columns):
+
+ALL 25+ PRODUCTS — each card:
+  - Image placeholder (square, light steel bg, wire rope SVG icon)
+  - Product name (bold, 15px, dark)
+  - Diameter badge (orange pill) + Grade badge (navy pill)
+  - Price: "₹XX / Meter" (orange, bold 17px)
+  - MOQ: "Min. Order: 1000 m" (gray, 12px)
+  - [Get Best Quote] (orange, full width, 36px)
+  - [View Details →] (text link, gray)
+
+COMPLETE PRODUCT LIST FOR GRID (all 25 products):
+
+1.  2mm Stainless Steel Wire Rope
+    Grade: SS 304 | Diameter: 2mm | Core: Fibre + Steel Core
+    Hardness: 55 HRC | Rust Proof: Yes | MOQ: 1000m | Price: ₹20/m
+
+2.  3mm Stainless Steel Wire Rope
+    Grade: SS 304L | Diameter: 3mm | Core: Steel Core
+    Length: 500m | Packaging: Coil | MOQ: 1000m | Price: ₹30/m
+
+3.  4mm Stainless Steel Rope Wire
+    Grade: SS 304L | Diameter: 4mm | Tensile: 500 N/mm²
+    Shape: Round | Packaging: Bundle | Length: 500m | Price: ₹58/m
+
+4.  5mm Stainless Steel Wire Rope
+    Grade: SS 304L | Diameter: 5mm | Surface: Polished
+    Shape: Round | Color: Silver | Length: 500m | Price: ₹75/m
+
+5.  6mm Stainless Steel Wire Rope
+    Grade: SS 304 | Diameter: 6mm | Shape: Round | Color: Silver
+    Packaging: Coil | Length: 500m | MOQ: 1000m | Price: ₹80/m
+
+6.  8mm Galvanized Steel Wire Rope
+    Diameter: 8mm | Core: Steel Core | Finish: Galvanized
+    Length: 100m | Packaging: Coil | MOQ: 1000m | Price: ₹47/m
+
+7.  10mm Galvanized Steel Wire Rope
+    Diameter: 10mm | Construction: 6×19 or 7×19 | Core: Steel Core
+    Surface: Polished | Length: 500m | Packaging: Coil
+    Application: Construction | MOQ: 1000m | Price: ₹125/m
+
+8.  1mm Galvanized Steel Wire Rope
+    Diameter: 1mm | Construction: 1×19 or 7×7 | Core: Steel Core
+    Surface: Polished | Length: 100m | Packaging: Coil
+    Application: Crafting, Jewelry, Light Rigging | MOQ: 1000m | Price: ₹23/m
+
+9.  Mild Steel Wire Rope
+    Diameter: 3mm | Core: Steel Core | Surface: Galvanized
+    Length: 500m | Packaging: Coil | Wire Material: Mild Steel
+    MOQ: 1000m | Price: ₹60/m
+
+10. Nylon Coated SS Wire Rope
+    Grade: SS 304 / SS 316 | Diameter: 2mm | Core: Fibre + Steel Core
+    Coating: Nylon | Hardness: 55 HRC | Rust Proof: Yes
+    MOQ: 1000m | Price: ₹9/m
+
+11. 3mm Galvanized Wire Rope
+    Diameter: 5mm (listed as 3mm product) | Core: Fibre
+    Finish: Galvanized | Hardness: 45 HRC | Length: 100m
+    Application: Construction | MOQ: 1000m | Price: ₹7/m
+
+12. Galvanized PVC Wireropes
+    Construction: 7×19 | Diameter: 1–10mm | Core: IWRC (Steel)
+    Finish: Galvanized | Tensile: 1960 N/mm² | Lay: Right Hand Regular
+    Surface: Polished | Reel: 500m / 1000m
+    Application: Lifting & Hoisting | Made in India
+    Brand: Surasha Wireropes | Price: ₹10/m
+
+13. Stainless Steel Wire Rope (2mm, SS 304L)
+    Grade: SS 304L | Diameter: 2mm | Core: Fibre
+    Hardness: 55 HRC | Rust Proof: Yes | MOQ: 100m | Price: ₹40/m
+
+14. SS 316 Wire Rope for High Mast
+    Grade: SS 316L | Diameter: 8mm | Core: Strand
+    Rust Proof: Yes | Hardness: 55 HRC | MOQ: 100m | Price: ₹55/m
+
+15. Stainless Steel Wire Rope (7×19, 1–10mm)
+    Grade: SS 304 | Diameter: 1–10mm | Pattern: 7×19 | Rust Proof: Yes
+    Application: Construction | MOQ: 500m | Price: ₹70/m
+
+16. SS Seal 304 Wire Rope
+    Grade: SS 304 | Diameter: 0.8mm | Construction: 7×19
+    Coating: Uncoated | Core: Steel Core (IWRC)
+    Application: Lifting & Hoisting | Reel: 1000m
+    Country: Made in India | MOQ: 1000m | Price: ₹25/m
+
+17. Stainless Steel 304 Wire Rope (8mm)
+    Grade: SS 304L | Diameter: 8mm | Tensile: 2160 N/mm²
+    Length: 1000m | Core: Steel Core | Packaging: Reel
+    Application: Construction | MOQ: 500m | Price: ₹58/m
+
+18. Wireropes for High Mast SS 316/304
+    Grade: SS 316 | Diameter: 6mm | Construction: 7×19
+    Tensile: 2160 N/mm² | Core: Steel Core | Length: 1000m
+    Packaging: Reel | Application: Construction | MOQ: 500m | Price: ₹75/m
+
+19. 316 Stainless Steel Wire Rope
+    Grade: SS 316 | Diameter: >10mm | Core: Steel Core
+    Length: 500m | Packaging: Roll | MOQ: 1000m | Price: ₹75/m
+    Note: Contains molybdenum for enhanced chloride resistance
+
+20. PVC Black and Yellow Coated Wire Rope
+    Construction: 7×19 | Diameter: 1–10mm (outer: 3–8mm)
+    Core: WSC (Strand) | Coating: PVC | Length: 1000m
+    Application: Gym, Winch, Marine, Safety Fence, Balcony Railing
+    Packaging: Roll | MOQ: 1000m | Price: ₹20/m
+
+21. PVC Coated Gym Wire Rope
+    Diameter: 6mm | Finish: PVC Coated | Color: Silver
+    Shape: Round | Length: 500m | Packaging: Coil | Price: ₹25/m
+
+22. PVC and Nylon Coated Wire Ropes
+    Construction: 7×19 | Diameter: 3–16mm | Core: Fiber Main Core
+    Coating: PVC + Nylon | Wire Diameter: 2.5mm
+    Application: Gym, Winch, Marine, Safety Fence
+    Grade: SS 304 | Color: Black | Length: 5000m
+    Packaging: Reel | MOQ: 1000m | Price: ₹10/m
+
+23. PVC Coated Steel Anti-Rust Wire Rope
+    Diameter: 2mm | Finish: PVC Coated | Color: Black
+    Length: 100m | Packaging: Roll | MOQ: 1000m | Price: ₹10/m
+
+24. Black PVC Coated Galvanized Wire Rope
+    Grade: SS 316 | Construction: 7×19 | Diameter: 2–16mm
+    Core: Fibre | Coating: Black PVC | Color: Black
+    Application: Marine, Gym, Winch, Safety Fence | Length: 1000m
+    Hardness: 45 HRC | Packaging: Reel | MOQ: 1000m | Price: ₹35/m
+
+25. 2mm Galvanized PVC Coated Wire Rope
+    Diameter: 2mm | Core: Strand | Surface: Galvanized
+    Type: PVC Coated | Length: 1000m | Hardness: 45 HRC
+    Application: Construction | Packaging: Roll
+    Country: Made in India | MOQ: 1000m | Price: ₹12/m
+
+26. 8mm SS Wire Rope (Strand, IWRC)
+    Grade: SS 304 | Diameter: 8mm | Construction: 7×19
+    Core: Steel Core (IWRC) | Coating: Uncoated | Color: Silver
+    Hardness: 55 HRC | Rust Proof: Yes | Length: 100m / Reel: 1000m
+    Application: Construction, Lifting & Hoisting
+    Country: India | MOQ: 1000m | Price: ₹20/m
+
+27. SS Strand Ropes (5mm)
+    Grade: SS 304 | Diameter: 5mm | Core: Strand
+    Rust Proof: Yes | Hardness: 55 HRC
+    Application: Construction | MOQ: 1000m | Price: ₹15/m
+
+28. Stainless Steel Strand Rope (3mm)
+    Diameter: 3mm | Core: Strand | Color: Silver
+    Length: 1000m | Application: Marine
+    Country: Made in India | MOQ: 1000m | Price: ₹15/m
+
+29. 8mm Ungalvanized Steel Wire Rope
+    Diameter: 6–16mm | Construction: 7×19
+    Core: Fibre Core + Steel Core | Tensile: 1960 N/mm²
+    Application: Lifting & Hoisting | Finish: Ungalvanized
+    Lay: Right Hand Regular | Price: ₹50/m
+
+30. Stainless Steel Wire Rope (SS 316, 3–16mm)
+    Grade: SS 316 | Diameter: 3–16mm (main: 6mm)
+    Construction: 7×19 | Core: Steel Core | Tensile: 2160 N/mm²
+    Length: 5000m | Coating: Galvanized | Lay: Right Regular
+    Packaging: Reel | Country: India | Price: ₹110/m
+
+31. Highmast Poll Wireropes
+    Grade: SS 304 / SS 316 | Diameter: 8mm | Construction: 7×19
+    Core: IWRC | Coating: Uncoated | Application: General Engineering
+    Reel: 1000m | Country: Made in India | MOQ: 1000m | Price: ₹80/m
+    Note: High mast pole wireropes 6mm SS 304/316
+
+32. SS316 Nylon Coating Wire Rope (Invisible Grill)
+    Grade: SS 304 / SS 316 | Diameter: 3mm | Wire: 3mm
+    Coating: Nylon | Color: Gray | Finish: Weather Proof
+    Position: Exterior | Application: Apartment window grills
+    MOQ: 5000m | Price: ₹20/m
+
+33. Wireropes for Lifeline 8mm SS 304/316
+    Grade: SS 304 | Diameter: 8mm | Tensile: 2160 N/mm²
+    Core: Steel Core | Length: 500m | Packaging: Reel
+    Application: Construction / Safety Lifeline
+    Certificate: Indian Test Certificate Available
+    MOQ: 500m | Price: ₹95/m
+
+34. SS Wire Rope 6mm 304/316
+    Grade: SS 304 | Diameter: 6mm | Construction: 7×19
+    Length: 1000m | Core: Steel Core | Coating: Uncoated
+    Application: Lifting & Hoisting | Reel: 1000m
+    Country: India | Price: ₹70/m
+
+═══════════════════════════════════════════
+PAGE 3: PRODUCT DETAIL PAGE
+(example: SS Wire Rope 6mm 304/316)
+═══════════════════════════════════════════
+
+Top bar: breadcrumb — Home > SS Wire Rope > SS Wire Rope 6mm 304/316
+
+TWO-COLUMN LAYOUT (sticky image left, spec right):
+
+LEFT — Image Gallery (45%):
+  Main image (large square, light gray bg + wire rope spool icon)
+  Row of 4 thumbnail images below (same placeholder)
+  Share icons row: Facebook · WhatsApp · LinkedIn
+
+RIGHT — Product Details (55%):
+  Small category badge: "SS WIRE ROPE" (orange pill)
+  H1: "SS Wire Rope 6mm 304/316"
+  Star rating: ★★★★★ (4.3 avg, 4 reviews)
+  
+  Price block (prominent):
+    "₹ 70 / Meter" (large, orange, bold)
+    "Get Latest Price" (orange outlined button)
+    
+  Key specs strip (horizontal badges):
+    🔩 6mm  |  7×19  |  SS 304  |  Steel Core  |  1000m reel
+
+  Specifications table (clean, alternating rows):
+    Material Grade:     SS 304
+    Grade:              304 / 316 available
+    Diameter:           6 mm
+    Construction:       7×19
+    Length:             1000 m
+    Coating:            Uncoated
+    Core Type:          Steel Core
+    Application:        Lifting & Hoisting
+    Tensile Strength:   2160 N/mm²
+    Reel Length:        1000 m
+    Country of Origin:  India
+    Service Location:   All Over India
+
+  Description:
+    "SS Wire Rope 6mm 304/316 is a high-strength stainless steel wire 
+    rope manufactured from SS 304 and SS 316 grade steel, providing 
+    excellent corrosion resistance and tensile strength. The 7×19 strand 
+    construction offers superior flexibility for lifting, hoisting, and 
+    rigging applications. Available in both uncoated and galvanized 
+    variants. Material grade 304 & 316. Supplied in 1000m reels."
+
+  CTA block:
+    MOQ note: "Minimum Order: 100 Meters"
+    [Request Callback] (navy outlined, large)
+    [Yes! I Am Interested] (orange solid, large)
+    [📞 Call: 08045910872] (text link)
+
+  Delivery & Trust info (small icon grid):
+    ✔ Pan India Delivery    ✔ GST Invoice Provided
+    ✔ Test Certificate on Request    ✔ TrustSEAL Verified
+
+BELOW fold: "Related Products" (4 cards, same format as featured row)
+
+═══════════════════════════════════════════
+PAGE 4: ABOUT US PAGE
+═══════════════════════════════════════════
+
+Hero (dark, 350px):
+  Breadcrumb: Home > About Us
+  H1: "About Surasha Wireropes"
+  Sub: "Manufacturers & Wholesalers of Wire Ropes — Thane, Maharashtra"
+
+STORY SECTION (white):
+  Label: "OUR STORY"
+  Two columns:
+    Left (text):
+      H2: "Built on Precision. Trusted Across India."
+      Body: "Surasha Wireropes was established in 2020 as a Proprietorship 
+      firm by Dhiraj Singh in Thane, Maharashtra. From day one, our mission 
+      has been to deliver precision-engineered wire ropes directly from 
+      factory to customer — eliminating middlemen and ensuring competitive 
+      pricing without compromising on quality.
+      
+      We are a TrustSEAL-verified manufacturer and wholesaler of Stainless 
+      Steel Wire Ropes, Galvanized Wire Ropes, PVC Coated Wire Ropes, and 
+      Strand Ropes. Our products serve construction companies, marine 
+      contractors, gym equipment manufacturers, and infrastructure projects 
+      across all of India."
+    Right: Company info card (white, shadowed):
+      Nature of Business:     Manufacturer
+      GST Registration Date:  03-01-2020
+      Legal Status:           Proprietorship
+      Annual Turnover:        ₹40L – 1.5 Cr
+      Import Export Code:     DHJPS7234B
+      GST No.:                27DHJPS7234B1Z7
+      IndiaMART Trust:        TrustSEAL Verified
+
+METRICS ROW (off-white bg):
+  4 stat cards:
+    50+  Products Listed
+    1000m  Min. Order Qty
+    4.3/5  Customer Rating
+    100%  Quality Satisfaction
+
+OWNER SECTION:
+  "Meet the Founder" — photo placeholder (circle) + name "Dhiraj Singh (Owner)"
+  Contact: 08045910872
+
+PRODUCT RANGE OVERVIEW:
+  Label: "WHAT WE MAKE"
+  Numbered list (fortran.in style, 01–04):
+    01  Stainless Steel Wire Ropes — SS 304, 304L, 316, 316L grades,
+        all diameters from 0.8mm to 16mm, 7×7 and 7×19 constructions
+    02  Galvanized Wire Ropes — Hot-dip zinc coated, 1mm to 10mm,
+        for outdoor and marine use
+    03  PVC & Nylon Coated Wire Ropes — Black, gray, yellow coatings,
+        for invisible grills, gym equipment, and balcony railings
+    04  Strand & Specialty Ropes — Strand construction, ungalvanized,
+        high mast pole ropes, lifeline ropes with test certificates
+
+LOCATION MAP PLACEHOLDER (with get directions button):
+  Address: Ground Floor, A 11, Mastan Industrial Estate, 
+           Navghar Phatk Road, Bhayander East, Thane – 401105
+  Coords: 19.29942, 72.85628
+
+═══════════════════════════════════════════
+PAGE 5: CONTACT US PAGE
+═══════════════════════════════════════════
+
+Hero (dark, 280px):
+  H1: "Contact Us"
+  Sub: "Send us an enquiry or call directly — we respond within 1 business day."
+
+Two-column layout:
+
+LEFT — Contact Info Card (white, elevated):
+  Company: Surasha Wireropes
+  Owner: Dhiraj Singh
+  Address: Ground Floor, A 11, Mastan Industrial Estate,
+           Navghar Phatk Road, Bhayander East,
+           Thane – 401105, Maharashtra, India
+  Phone: 08045910872
+  Response Rate: 77%
+  GST: 27DHJPS7234B1Z7
+
+  Map embed area (300px height, placeholder with pin icon and 
+  "Get Directions" button linking to google.com/maps?q=19.29942,72.85628)
+
+  Social links: Facebook · Twitter · LinkedIn
+  [Send Email] button  |  [Send SMS] button
+
+RIGHT — Enquiry Form (white card):
+  H3: "Send Us Your Requirements"
+  Fields:
+    Salutation: Mr · Ms · Mrs · Dr (radio or dropdown)
+    Full Name *
+    Phone Number *
+    Email Address *
+    Company / Organization
+    Product Interested In * (dropdown — all 34 products listed)
+    Diameter Required (dropdown: 0.8mm, 1mm, 2mm, 3mm, 4mm, 5mm, 6mm, 
+                        8mm, 10mm, 12mm, 16mm, Other)
+    Quantity (meters) *
+    Material Grade Preference (dropdown: SS 304, SS 316, Galvanized, 
+                                          Mild Steel, No Preference)
+    Message / Special Requirements
+  [Send Enquiry →] (orange, full width, large)
+  Privacy note: "Your information is only used to respond to your enquiry."
+
+═══════════════════════════════════════════
+MOBILE RESPONSIVE RULES
+═══════════════════════════════════════════
+  - Navbar: hamburger menu, logo left, "Get Quote" right
+  - Hero: H1 36px, stack CTAs vertically, trust strip scrolls horizontal
+  - Product categories: 1-column cards on mobile, 2-col on tablet
+  - Featured products: horizontal scroll row stays as-is
+  - "Why Choose Us" grid: 2-col on tablet, 1-col on mobile
+  - Product grid: 1-col mobile, 2-col tablet, 3-col desktop
+  - Product detail: stack image above specs on mobile
+  - Footer: all columns stack to 1-col, accordion-style expand
+
+═══════════════════════════════════════════
+ANIMATIONS & INTERACTIONS
+═══════════════════════════════════════════
+  - Product cards: subtle upward hover lift (translateY -4px) + orange 
+    bottom border appears
+  - Navbar: white bg + box-shadow after 60px scroll
+  - CTA buttons: scale 1.03 on hover, slight darken on active
+  - Section entrance: fade-in + slide-up on scroll (Intersection Observer)
+  - Stat counters: count-up animation when section enters viewport
+  - Mobile menu: slide-down with staggered link animations
