@@ -260,15 +260,15 @@ export function AboutPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <a
-                  href="tel:08045910872"
+                  href="tel:+919920196934"
                   className="p-4 rounded-xl bg-white border flex flex-col gap-1 hover:border-orange-400 transition-colors"
                   style={{ borderColor: "#E2E2E2" }}
                 >
                   <span className="text-xs uppercase" style={{ color: "#8A9BAD" }}>Phone</span>
-                  <span className="text-sm font-semibold" style={{ color: "#1A1A1A" }}>08045910872</span>
+                  <span className="text-sm font-semibold" style={{ color: "#1A1A1A" }}>+91 9920196934</span>
                 </a>
                 <a
-                  href="mailto:enquiry@surashawireropes.com"
+                  href="mailto:surashawireropes@gmail.com"
                   className="p-4 rounded-xl bg-white border flex flex-col gap-1 hover:border-orange-400 transition-colors"
                   style={{ borderColor: "#E2E2E2" }}
                 >

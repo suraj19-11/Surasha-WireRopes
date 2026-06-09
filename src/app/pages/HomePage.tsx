@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { ArrowRight, CheckCircle2, Star, ChevronRight } from "lucide-react";
 import { ProductCard } from "../components/ProductCard";
 import { products } from "../data/products";
+import Lightfall from "../components/Lightfall";
 
 const HERO_IMAGE = "https://images.unsplash.com/photo-1644238017851-21f15062c213?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwd2lyZSUyMHJvcGUlMjBmYWN0b3J5JTIwc3RlZWx8ZW58MXx8fHwxNzgwODUxMzAzfDA&ixlib=rb-4.1.0&q=80&w=1080";
 const FACTORY_IMAGE = "https://images.unsplash.com/photo-1720036236694-d0a231c52563?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxpbmR1c3RyaWFsJTIwd2lyZSUyMHJvcGUlMjBmYWN0b3J5JTIwc3RlZWx8ZW58MXx8fHwxNzgwODUxMzAzfDA&ixlib=rb-4.1.0&q=80&w=1080";
@@ -108,19 +109,38 @@ export function HomePage() {
         className="relative flex items-center justify-center min-h-screen"
         style={{ minHeight: "100vh" }}
       >
-        <img
-          src={HERO_IMAGE}
-          alt="Wire rope factory"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(13,27,42,0.78)" }} />
+        {/* Lightfall animated background */}
+        <div className="absolute inset-0">
+          <Lightfall
+            colors={['#ffffff', '#ffffff', '#94a3b8']}
+            backgroundColor="#000000"
+            speed={0.5}
+            streakCount={2}
+            streakWidth={0.5}
+            streakLength={1}
+            glow={1.9}
+            density={1.9}
+            twinkle={0.45}
+            zoom={1}
+            backgroundGlow={0.5}
+            opacity={1}
+            mouseInteraction={false}
+            mouseStrength={0.7}
+            mouseRadius={0.85}
+            mouseDampening={0.15}
+          />
+        </div>
+        {/* Subtle overlay to keep text readable */}
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(13,27,42,0.45)" }} />
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <p
-            className="mb-5 tracking-widest uppercase text-xs"
-            style={{ color: "#E87722", letterSpacing: "0.15em" }}
-          >
-            Manufacturer &amp; Wholesaler — Thane, India
-          </p>
+          <div className="mb-5 inline-block" style={{ background: "rgba(255,255,255,0.01)", border: "1px solid rgba(255,255,255,0.20)", borderRadius: "50px", padding: "8px 16px" }}>
+            <p
+              className="tracking-widest uppercase text-xs"
+              style={{ color: "#E87722", letterSpacing: "0.15em", fontWeight: 700, margin: 0 }}
+            >
+              Manufacturer &amp; Wholesaler - Thane, Maharashtra, India
+            </p>
+          </div>
           <h1
             className="mb-5"
             style={{
@@ -133,7 +153,7 @@ export function HomePage() {
           >
             Precision Wire Ropes for Every Industrial Need
           </h1>
-          <p className="mb-8 text-lg" style={{ color: "#8A9BAD", lineHeight: 1.7 }}>
+          <p className="mb-8 text-lg" style={{ color: "#ffffff", lineHeight: 1.7 }}>
             Stainless Steel · Galvanized · PVC Coated · Strand Wire Ropes.
             Direct manufacturer pricing. Pan India delivery.
           </p>
@@ -360,14 +380,14 @@ export function HomePage() {
               <div className="text-center mb-5">
                 <p className="text-6xl font-bold mb-1" style={{ color: "#1A1A1A", fontFamily: "Poppins, sans-serif" }}>4.3</p>
                 <div className="flex justify-center gap-0.5 mb-1">
-                  {[1,2,3,4,5].map((s) => (
+                  {[1, 2, 3, 4, 5].map((s) => (
                     <Star key={s} size={16} fill={s <= 4 ? "#E87722" : "none"} stroke="#E87722" />
                   ))}
                 </div>
                 <p className="text-xs" style={{ color: "#8A9BAD" }}>Reviewed by 4 Users</p>
               </div>
               <div className="space-y-2">
-                {[[5,2],[4,1],[3,1],[2,0],[1,0]].map(([star, count]) => (
+                {[[5, 2], [4, 1], [3, 1], [2, 0], [1, 0]].map(([star, count]) => (
                   <div key={star} className="flex items-center gap-2">
                     <span className="text-xs w-4" style={{ color: "#555" }}>{star}★</span>
                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ backgroundColor: "#F0F0F0" }}>
@@ -404,7 +424,7 @@ export function HomePage() {
                     </div>
                   </div>
                   <div className="flex gap-0.5 mb-2">
-                    {[1,2,3,4,5].map((s) => <Star key={s} size={12} fill="#E87722" stroke="#E87722" />)}
+                    {[1, 2, 3, 4, 5].map((s) => <Star key={s} size={12} fill="#E87722" stroke="#E87722" />)}
                   </div>
                   <p className="text-xs mb-2" style={{ color: "#8A9BAD" }}>{rev.date} · {rev.product}</p>
                   <p className="text-sm" style={{ color: "#555555", lineHeight: 1.6 }}>{rev.text}</p>

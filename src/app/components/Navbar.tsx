@@ -34,18 +34,11 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: "#0D1B2A" }}
-            >
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <circle cx="11" cy="11" r="8" stroke="#E87722" strokeWidth="2.5" fill="none" />
-                <circle cx="11" cy="11" r="3" fill="#E87722" />
-                <path d="M11 3 Q14 7 11 11 Q8 7 11 3Z" fill="#8A9BAD" opacity="0.6" />
-                <path d="M19 11 Q15 14 11 11 Q15 8 19 11Z" fill="#8A9BAD" opacity="0.6" />
-                <path d="M3 11 Q7 8 11 11 Q7 14 3 11Z" fill="#8A9BAD" opacity="0.6" />
-              </svg>
-            </div>
+            <img
+              src="/src/assets/Logo.webp"
+              alt="Surasha Wireropes Logo"
+              className="w-9 h-9 rounded-lg object-contain"
+            />
             <span className="flex flex-col leading-none">
               <span style={{ fontFamily: "Poppins, Inter, sans-serif", fontWeight: 700, fontSize: "17px", color: "#0D1B2A", letterSpacing: "0.02em" }}>
                 Surasha
