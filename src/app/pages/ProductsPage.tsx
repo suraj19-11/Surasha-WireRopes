@@ -1,12 +1,61 @@
 import { useState, useMemo } from "react";
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { SlidersHorizontal, X } from "lucide-react";
 import { ProductCard } from "../components/ProductCard";
 import { products } from "../data/products";
 
 const GRADES = ["SS 304", "SS 304L", "SS 316", "SS 316L", "Galvanized Steel", "Mild Steel"];
 const COATINGS = ["Uncoated", "PVC Coated", "Nylon Coated", "Galvanized", "Black PVC"];
-const CATS = ["Steel Wire Rope", "Wire Rope / SS Grade", "PVC Coated Wire Rope", "SS Wire Rope", "Strand Rope", "Strand Wire Rope", "Ungalvanized Wire Rope", "Stainless Steel Wire Rope", "Steel Core Wire Ropes"];
+const CATS = [
+  "Steel Wire Rope",
+  "SS Wire Rope (304/316)",
+  "PVC Coated Wire Rope",
+  "Galvanized Wire Rope",
+  "Strand Rope",
+  "Strand Wire Rope",
+  "Ungalvanized Wire Rope",
+  "Stainless Steel Wire Rope"
+];
+
+const PARAM_TO_CAT_MAP: Record<string, string> = {
+  "steel-wire-rope": "Steel Wire Rope",
+  "ss-wire-rope-304-316": "SS Wire Rope (304/316)",
+  "pvc-coated-wire-rope": "PVC Coated Wire Rope",
+  "galvanized-wire-rope": "Galvanized Wire Rope",
+  "strand-rope": "Strand Rope",
+  "strand-wire-rope": "Strand Wire Rope",
+  "ungalvanized-wire-rope": "Ungalvanized Wire Rope",
+  "stainless-steel-wire-rope": "Stainless Steel Wire Rope",
+};
+
+const matchCategory = (productCat: string, filterCat: string): boolean => {
+  const pCat = productCat.toLowerCase();
+  const fCat = filterCat.toLowerCase();
+  
+  if (fCat === "steel wire rope") {
+    return pCat.includes("steel wire rope") || pCat.includes("ss wire rope") || pCat.includes("galvanized wire rope") || pCat.includes("ungalvanized wire rope");
+  }
+  if (fCat === "ss wire rope (304/316)" || fCat === "ss wire rope") {
+    return pCat === "ss wire rope" || pCat === "stainless steel wire rope";
+  }
+  if (fCat === "stainless steel wire rope") {
+    return pCat === "stainless steel wire rope";
+  }
+  if (fCat === "pvc coated wire rope") {
+    return pCat === "pvc coated wire rope";
+  }
+  if (fCat === "galvanized wire rope") {
+    return pCat === "galvanized wire rope";
+  }
+  if (fCat === "strand rope" || fCat === "strand wire rope") {
+    return pCat === "strand rope";
+  }
+  if (fCat === "ungalvanized wire rope") {
+    return pCat === "ungalvanized wire rope";
+  }
+  
+  return pCat.includes(fCat);
+};
 
 function parseDiameter(d: string): number {
   const match = d.match(/[\d.]+/);
@@ -14,15 +63,40 @@ function parseDiameter(d: string): number {
 }
 
 export function ProductsPage() {
-  const [selectedCats, setSelectedCats] = useState<string[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedGrades, setSelectedGrades] = useState<string[]>([]);
   const [selectedCoatings, setSelectedCoatings] = useState<string[]>([]);
   const [diameterRange, setDiameterRange] = useState<[number, number]>([1, 16]);
   const [priceRange, setPriceRange] = useState<[number, number]>([5, 200]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const catParams = searchParams.getAll("category");
+  const selectedCats = useMemo(() => {
+    return catParams
+      .map((p) => PARAM_TO_CAT_MAP[p])
+      .filter((c): c is string => !!c);
+  }, [catParams]);
+
   const toggle = (arr: string[], setArr: (v: string[]) => void, val: string) => {
     setArr(arr.includes(val) ? arr.filter((x) => x !== val) : [...arr, val]);
+  };
+
+  const toggleCat = (cat: string) => {
+    const param = Object.keys(PARAM_TO_CAT_MAP).find((k) => PARAM_TO_CAT_MAP[k] === cat);
+    if (!param) return;
+
+    const currentParams = searchParams.getAll("category");
+    let nextParams: string[];
+    if (currentParams.includes(param)) {
+      nextParams = currentParams.filter((p) => p !== param);
+    } else {
+      nextParams = [...currentParams, param];
+    }
+
+    const newParams = new URLSearchParams(searchParams);
+    newParams.delete("category");
+    nextParams.forEach((p) => newParams.append("category", p));
+    setSearchParams(newParams);
   };
 
   const filtered = useMemo(() => {
@@ -30,7 +104,7 @@ export function ProductsPage() {
       const dia = parseDiameter(p.diameter);
       const inDia = dia === 0 || (dia >= diameterRange[0] && dia <= diameterRange[1]);
       const inPrice = p.priceNum >= priceRange[0] && p.priceNum <= priceRange[1];
-      const inCat = selectedCats.length === 0 || selectedCats.some((c) => p.category.toLowerCase().includes(c.toLowerCase()));
+      const inCat = selectedCats.length === 0 || selectedCats.some((c) => matchCategory(p.category, c));
       const inGrade = selectedGrades.length === 0 || selectedGrades.some((g) => p.grade.includes(g));
       const inCoating = selectedCoatings.length === 0 || selectedCoatings.some((c) => (p.coating || "Uncoated").toLowerCase().includes(c.toLowerCase()));
       return inDia && inPrice && inCat && inGrade && inCoating;
@@ -38,11 +112,13 @@ export function ProductsPage() {
   }, [selectedCats, selectedGrades, selectedCoatings, diameterRange, priceRange]);
 
   const clearAll = () => {
-    setSelectedCats([]);
     setSelectedGrades([]);
     setSelectedCoatings([]);
     setDiameterRange([1, 16]);
     setPriceRange([5, 200]);
+    const newParams = new URLSearchParams(searchParams);
+    newParams.delete("category");
+    setSearchParams(newParams);
   };
 
   const hasFilters = selectedCats.length > 0 || selectedGrades.length > 0 || selectedCoatings.length > 0 || diameterRange[0] > 1 || diameterRange[1] < 16 || priceRange[0] > 5 || priceRange[1] < 200;
@@ -59,7 +135,7 @@ export function ProductsPage() {
       {/* Category */}
       <FilterGroup title="Category">
         {CATS.map((c) => (
-          <CheckItem key={c} label={c} checked={selectedCats.includes(c)} onChange={() => toggle(selectedCats, setSelectedCats, c)} />
+          <CheckItem key={c} label={c} checked={selectedCats.includes(c)} onChange={() => toggleCat(c)} />
         ))}
       </FilterGroup>
 

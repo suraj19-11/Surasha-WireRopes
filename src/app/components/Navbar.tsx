@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
-import { megaDropdownProducts } from "../data/products";
+
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -71,34 +71,35 @@ export function Navbar() {
                 Products <ChevronDown size={14} className={`transition-transform ${productsOpen ? "rotate-180" : ""}`} />
               </button>
 
-              {/* Mega Dropdown */}
+              {/* Dropdown */}
               {productsOpen && (
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-[720px] rounded-lg shadow-2xl border py-6 px-6 grid grid-cols-3 gap-6"
-                  style={{ backgroundColor: "#fff", borderColor: "#E2E2E2" }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 w-[280px] rounded-lg shadow-2xl py-3 px-2 flex flex-col gap-0.5 animate-in fade-in slide-in-from-top-2 duration-200"
+                  style={{
+                    backgroundColor: "#0D1B2A",
+                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                  }}
                 >
-                  {Object.entries(megaDropdownProducts).map(([col, items]) => (
-                    <div key={col}>
-                      <p
-                        className="text-xs uppercase mb-3 pb-2 border-b"
-                        style={{ color: "#E87722", letterSpacing: "0.1em", borderColor: "#E2E2E2", fontWeight: 600 }}
-                      >
-                        {col}
-                      </p>
-                      <ul className="space-y-1.5">
-                        {items.map((item) => (
-                          <li key={item}>
-                            <Link
-                              to="/products"
-                              className="text-sm hover:text-orange-500 transition-colors block"
-                              style={{ color: "#555555", fontFamily: "Inter, sans-serif" }}
-                            >
-                              {item}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  {[
+                    { name: "Steel Wire Rope", param: "steel-wire-rope" },
+                    { name: "SS Wire Rope (304/316)", param: "ss-wire-rope-304-316" },
+                    { name: "PVC Coated Wire Rope", param: "pvc-coated-wire-rope" },
+                    { name: "Galvanized Wire Rope", param: "galvanized-wire-rope" },
+                    { name: "Strand Rope", param: "strand-rope" },
+                    { name: "Strand Wire Rope", param: "strand-wire-rope" },
+                    { name: "Ungalvanized Wire Rope", param: "ungalvanized-wire-rope" },
+                    { name: "Stainless Steel Wire Rope", param: "stainless-steel-wire-rope" },
+                  ].map((cat) => (
+                    <Link
+                      key={cat.param}
+                      to={`/products?category=${cat.param}`}
+                      className="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 text-white hover:text-[#E87722] hover:bg-white/5 block"
+                      style={{
+                        fontFamily: "Inter, sans-serif",
+                      }}
+                    >
+                      {cat.name}
+                    </Link>
                   ))}
                 </div>
               )}
