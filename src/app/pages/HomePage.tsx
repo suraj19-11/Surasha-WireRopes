@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { ArrowRight, CheckCircle2, Star, ChevronRight } from "lucide-react";
 import { ProductCard } from "../components/ProductCard";
 import { products } from "../data/products";
-import Lightfall from "../components/Lightfall";
+
 
 const HERO_IMAGE = "https://images.unsplash.com/photo-1644238017851-21f15062c213?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwd2lyZSUyMHJvcGUlMjBmYWN0b3J5JTIwc3RlZWx8ZW58MXx8fHwxNzgwODUxMzAzfDA&ixlib=rb-4.1.0&q=80&w=1080";
 const FACTORY_IMAGE = "https://images.unsplash.com/photo-1720036236694-d0a231c52563?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxpbmR1c3RyaWFsJTIwd2lyZSUyMHJvcGUlMjBmYWN0b3J5JTIwc3RlZWx8ZW58MXx8fHwxNzgwODUxMzAzfDA&ixlib=rb-4.1.0&q=80&w=1080";
@@ -109,27 +109,8 @@ export function HomePage() {
         className="relative flex items-center justify-center min-h-screen"
         style={{ minHeight: "100vh" }}
       >
-        {/* Lightfall animated background */}
-        <div className="absolute inset-0">
-          <Lightfall
-            colors={['#ffffff', '#ffffff', '#94a3b8']}
-            backgroundColor="#000000"
-            speed={0.5}
-            streakCount={2}
-            streakWidth={0.5}
-            streakLength={1}
-            glow={1.9}
-            density={1.9}
-            twinkle={0.45}
-            zoom={1}
-            backgroundGlow={0.5}
-            opacity={1}
-            mouseInteraction={false}
-            mouseStrength={0.7}
-            mouseRadius={0.85}
-            mouseDampening={0.15}
-          />
-        </div>
+        {/* Solid dark navy background */}
+        <div style={{ position: "absolute", inset: 0, backgroundColor: "#0D1B2A", zIndex: 0 }} />
         {/* Subtle overlay to keep text readable */}
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(13,27,42,0.45)" }} />
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
